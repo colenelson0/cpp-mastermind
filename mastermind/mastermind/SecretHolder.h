@@ -24,8 +24,6 @@ namespace SH
             void SetResults(int guess);
             int GetRedPins();
             int GetWhitePins();
-            
-            // Debug Methods
             void DisplayCode();
             
     };
