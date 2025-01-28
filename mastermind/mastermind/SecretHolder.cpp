@@ -7,8 +7,14 @@
 using namespace SH;
 using namespace std;
 
+/*
+ This is the class constructor. All attribute values are initialized within the class's methods, so no value assignments are necessary within the constructor.
+ */
 SecretHolder::SecretHolder() {}
 
+/*
+ GenerateCode method (private) - generates four random integers from a range that depends on the assigned complexity and assigns the values to an array.
+ */
 void SecretHolder::GenerateCode()
 {
     srand(time(0)); // changes the random seed

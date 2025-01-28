@@ -1,6 +1,9 @@
 #ifndef SECRET_HOLDER_H
 #define SECRET_HOLDER_H
 
+/*
+ This is the header file for the SecretHolder class. It contains all the attributes that are to be used as well as the method declarations. The definitions for the methods can be seen in the file SecretHolder.cpp
+ */
 namespace SH
 {
     class SecretHolder

@@ -11,6 +11,7 @@ using namespace std;
 // Main function
 int main()
 {
+    // the variables and SecretHolder class are created
     SecretHolder secretHolder;
     int guesses;
     bool win = false;
@@ -51,6 +52,7 @@ int main()
         guesses--;
         if (!win && guesses > 0)
         {
+            // This statement is unnecessary if you have won or are out of guesses
             cout << "You have " << guesses << " guesses left.\n\n";
         }
     }
