@@ -1,7 +1,5 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
-
 {Provide a description of the software that you wrote to demonstrate the C++ language.}
 
 {Describe your purpose for writing this software.}
@@ -12,9 +10,9 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+At first, the program was developed in Visual Studio Code, but due to complications with compiling, it was transferred into Xcode and finished there.
 
-{Describe the programming language that you used and any libraries.}
+The program was developed using C++ using tools from the <iostream>, <cstdlib>, <ctime>, and <vector> libraries.
 
 # Useful Websites
 
@@ -22,6 +20,7 @@
 
 - [C++ Header Files](https://learn.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=msvc-170)
 - [C++ How to Generate Random Numbers](https://www.w3schools.com/cpp/cpp_howto_random_number.asp)
+- [Xcode and C++](https://medium.com/@VIRAL/mac-xcode-and-c-beginning-1a52f43830c0)
 
 # Future Work
 
