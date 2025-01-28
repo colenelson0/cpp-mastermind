@@ -20,8 +20,8 @@
 
 {Make a list of websites that you found helpful in this project}
 
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [C++ Header Files](https://learn.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=msvc-170)
+- [C++ How to Generate Random Numbers](https://www.w3schools.com/cpp/cpp_howto_random_number.asp)
 
 # Future Work
 
