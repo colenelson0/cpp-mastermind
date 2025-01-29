@@ -6,9 +6,7 @@ For this program, instead of sequences of different colors, it uses different nu
 
 The reason I decided to make this program in C++ was to refresh my understanding of the programming language since it was my first, and it has been a few years since I last used it. I wanted to take advantage of the OOP aspects of C++ in my program as well, since those can very useful for organizing and guarding code. I chose Mastermind as the program because it is a game I recently have enjoyed because of how it encourages logical thinking, which is a useful skill that makes it easier to understand how programming works in general.
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Program Demo and Walkthrough](https://www.youtube.com/watch?v=zgD-aTOiIL0)
 
 # Development Environment
 
@@ -18,16 +16,6 @@ The program was developed using C++ using tools from the `<iostream>`, `<cstdlib
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
 - [C++ Header Files](https://learn.microsoft.com/en-us/cpp/cpp/header-files-cpp?view=msvc-170)
 - [C++ How to Generate Random Numbers](https://www.w3schools.com/cpp/cpp_howto_random_number.asp)
 - [Xcode and C++](https://medium.com/@VIRAL/mac-xcode-and-c-beginning-1a52f43830c0)
-
-# Future Work
-
-{Make a list of things that you need to fix, improve, and add in the future.}
-
-- Item 1
-- Item 2
-- Item 3
