@@ -1,3 +1,5 @@
+// SecretHolder.h
+
 #ifndef SECRET_HOLDER_H
 #define SECRET_HOLDER_H
 
@@ -10,10 +12,10 @@ namespace SH
     {
         private:
             // Attributes
-            int _secretCode[4];
-            int _complexity; // this represents the number of different numbers that could be occupying each spot
-            int _redPins;
-            int _whitePins;
+            int _secretCode[4];     // the secret code that the user is prompted to guess
+            int _complexity;        // the number of different numbers that could be occupying each spot
+            int _redPins;           // the number of correct colors in the correct spots
+            int _whitePins;         // the number of correct colors in the wrong spots
 
             // Private Methods
             void GenerateCode();

@@ -1,3 +1,5 @@
+// SecretHolder.cpp
+
 #include "SecretHolder.h"
 #include <iostream>
 #include <cstdlib>
@@ -25,6 +27,11 @@ void SecretHolder::GenerateCode()
     }
 }
 
+/*
+ SetComplexity method - receives a value from the caller to assign to the complexity attribute. If the selected value is out of range, the closest value that is in range is assigned instead.
+ Parameters:
+    c - the complexity value being assigned to the attribute
+ */
 void SecretHolder::SetComplexity(int c)
 {
     // complexity =  1 :  1 option  (0000)
@@ -32,10 +39,12 @@ void SecretHolder::SetComplexity(int c)
     // complexity = 10 : 10 options (9302)
     if (c > 10)
     {
+        // the value cannot be greater than 10 - any attempt would result in a 2-digit number
         _complexity = 10;
     }
     else if (c < 1)
     {
+        // the value cannot be less than 1 - this would potentially lead to negative numbers or division by zero
         _complexity = 1;
     }
     else
@@ -43,9 +52,15 @@ void SecretHolder::SetComplexity(int c)
         _complexity = c;
     }
 
+    // this method also calls the method to generate the code
     GenerateCode();
 }
 
+/*
+ SetResults method - receives a guess for the code from the caller and compares it with the secret code. Values are assigned to redPins and whitePins based on this information.
+ Parameters:
+    guess - the user's guess for the secret code
+ */
 void SecretHolder::SetResults(int guess)
 {
     // convert the four digit guess into an array of four ints
@@ -66,10 +81,12 @@ void SecretHolder::SetResults(int guess)
     for (int i = 0; i < 4; i++) {
         if (guesses[i] == _secretCode[i])
         {
+            // the values match, which means a red pin must be added
             _redPins++;
         }
         else
         {
+            // the values dont match, so this index is stored for later comparison
             mismatches.push_back(i);
         }
     }
@@ -82,49 +99,75 @@ void SecretHolder::SetResults(int guess)
     
     for (int j = 0; j < mismatches.size(); j++)
     {
+        // store the index of the guess that will be used for this loop
         int guessIndex = mismatches[j];
         
+        // iterate through the options for the secret code until a match is found or there are none left to check
         bool matchFound = false;
         int k = 0;
         while (!matchFound && k < mismatches.size())
         {
+            // store the index of the secret code that will be used for this loop
             int answerIndex = mismatches[k];
             
+            // guessIndex != answerIndex : if they are the same index, they cannot be have matching values
+            // guesses[guessIndex] == _secretCode[answerIndex] : the values are the same if this is true
             if (guessIndex != answerIndex && guesses[guessIndex] == _secretCode[answerIndex])
             {
+                // check to see if the secret code index matches any of the indexes in usedAnswers
                 bool answerFound = false;
                 int h = 0;
                 while (!answerFound && h < usedAnswers.size())
                 {
                     answerFound = usedAnswers[h] == answerIndex;
+                    // if this is true, the index is in usedAnswers
                     h++;
-                }
+                    
+                } // while (!answerFound && h < usedAnswers.size())
                 
+                // !answerFound : the secret code index has not yet been used for a white pin
                 if (!answerFound)
                 {
-                    // they are a match?
+                    // the values match, which means a white pin must be added
                     _whitePins++;
+                    // the secret code index has been used for a white pin, so it must be pushed to usedAnswers
                     usedAnswers.push_back(answerIndex);
                     matchFound = true;
-                }
-            }
-            
+                    
+                } // end if
+                
+            } // end if
             k++;
-        }
-    }
+            
+        } // while (!matchFound && k < mismatches.size())
+        
+    } // for (int j = 0; j < mismatches.size(); j++)
     
-}
+} // end method
 
+/*
+ GetRedPins method - returns the value currently stored in redPins, which is the number of correct colors in the correct spots.
+ Return value:
+    the number of red pins for the guess
+ */
 int SecretHolder::GetRedPins()
 {
     return _redPins;
 }
 
+/*
+ GetWhitePins method - returns the value currently stored in whitePins, which is the number of correct colors in the wrong spots.
+ Return value:
+    the number of white pins for the guess
+ */
 int SecretHolder::GetWhitePins()
 {
     return _whitePins;
 }
 
+/*
+ DisplayCode method - displays a message containing the secret code, followed by encouragement for the user to try again.
+ */
 void SecretHolder::DisplayCode()
 {
     cout << "\nNice try, but the secret code was ";

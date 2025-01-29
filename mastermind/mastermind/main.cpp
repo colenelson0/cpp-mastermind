@@ -18,18 +18,22 @@ int main()
 
     cout << "Welcome to the Mastermind program\n\n";
 
+    // complexity variable is created and assigned a value based on user input
     cout << "Select the complexity of the secret code (1-10): ";
     int complexity;
     cin >> complexity;
+    // the value is sent to secretHolder
     secretHolder.SetComplexity(complexity);
     cout << "The program has prepared a secret code.\n";
     cout << "The range of numbers is between 0 and " << complexity - 1;
 
+    // the user decides how many guesses will be allowed
     cout << ".\nHow many tries should be allowed? ";
     cin >> guesses;
     
     while (!win && guesses > 0)
     {
+        // the user guesses the secret code
         int userGuess;
         do
         {
@@ -37,6 +41,7 @@ int main()
             cin >> userGuess;
             if (userGuess > 9999 || userGuess < 0)
             {
+                // the input is invalid and the user is prompted to try again
                 cout << "Invalid guess; cannot be negative or >4 digits.\n";
             }
         } while (userGuess > 9999 || userGuess < 0);
